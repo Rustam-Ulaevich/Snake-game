@@ -39,7 +39,7 @@ function direction(event) {
         dir = 'down'
 }
 
-function eatTail(head, arr) {
+function eatTail(head, arr) {  //24 сама себя съедает
     for( let i = 0; i < arr.length; i++) {
         if(head.x == arr[i].x && head.y == arr[i].y)
 
@@ -78,7 +78,7 @@ function drawGame() {  // 6 главная функция которая буд�
         snake.pop() // 17 удаление последнего элемента массива (змейки)
     }
 
-    if(snakeX < box || snakeX > box * 17  //Проверка удара об стену
+    if(snakeX < box || snakeX > box * 17  // 23 Проверка удара об стену
         || snakeY < 3 * box || snakeY > box * 17)
         clearInterval(game)
 
@@ -92,7 +92,7 @@ function drawGame() {  // 6 главная функция которая буд�
         y: snakeY
     }
 
-    eatTail(newHead, snake)
+    eatTail(newHead, snake)  // 25 вызов фунции самосъедения
 
     snake.unshift(newHead) // 20 добавление нового элемента в начало массива. Должна бегать змейка!!!
 }
